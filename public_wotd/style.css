@@ -464,8 +464,6 @@ label{
     
     body{
         position: absolute;
-
-        touch-action: manipulation;
         margin: 0 auto;
         min-width: 100vw;
         min-height: 90vh;
@@ -767,6 +765,7 @@ label{
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
+        align-items: center;
     }
 
     #information-container {
@@ -821,7 +820,7 @@ label{
         margin: 0 auto;
         padding: 0 0 2rem 0;
         display: grid;
-        min-width: 35rem;
+        width: 80%;
         max-height: 40rem;
         grid-template-rows: repeat(3, 1fr);
         gap: .4rem;
@@ -834,7 +833,7 @@ label{
         justify-content: center;
         grid-row: 1fr;
         min-height: 30%;
-        min-width: 98%;
+        width: 80%;
 
     
     }
@@ -845,7 +844,7 @@ label{
         justify-content: center;
         grid-row: 1fr;
         min-height: 30%;
-        min-width: 98%;
+        width: 80%;
     }
     
     #keyboard-third-row{
@@ -855,7 +854,7 @@ label{
         display: flex;
         justify-content: center;
         min-height: 30%;
-        min-width: 98%;
+        width: 80%;
     }
     
     .letter-keys{
@@ -917,8 +916,6 @@ label{
     
     body{
         position: absolute;
-
-        touch-action: manipulation;
         margin: 0 auto;
         min-width: 100vw;
         min-height: 90vh;
@@ -1371,8 +1368,6 @@ label{
     
     body{
         position: absolute;
-
-        touch-action: manipulation;
         margin: 0 auto;
         min-width: 100vw;
         min-height: 90vh;
@@ -1823,8 +1818,6 @@ label{
     
     body{
         position: absolute;
-
-        touch-action: manipulation;
         margin: 0 auto;
         min-width: 100vw;
         min-height: 90vh;
@@ -2280,8 +2273,6 @@ label{
     
     body{
         position: absolute;
-
-        touch-action: manipulation;
         margin: 0 auto;
         min-width: 100vw;
         min-height: 90vh;
@@ -2728,8 +2719,6 @@ label{
     
     body{
         position: absolute;
-
-        touch-action: manipulation;
         margin: 0 auto;
         min-width: 100vw;
         min-height: 90vh;
@@ -3212,7 +3201,6 @@ label{
     
     body{
         position: absolute;
-
         margin: 0 auto;
         min-width: 100vw;
         min-height: 100vh;
