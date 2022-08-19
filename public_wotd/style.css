@@ -583,12 +583,10 @@ label{
         font-size: 2.25rem;
     }
     
-    #access-buttons{
-        padding: 1rem 0 1rem 0;
-    }
     
     
     .access-button{
+        padding: 0 0 0 0;
         background-color: var(--clr-main);
         color: var(--bg-color);
         min-width: 3rem;
@@ -597,6 +595,7 @@ label{
         margin: 1.5rem 0 0 0;
     }
     .access-button {
+        padding: 0 0 0 0;
         margin: 1.5rem 0 0 0;
         height: 3rem;
         width: 7rem;
@@ -605,6 +604,7 @@ label{
     
     
     .access-code-buttons{
+        padding: 0 0 0 0;
         background-color: var(--clr-main);
         color: var(--bg-color);
         display: inline;
@@ -637,6 +637,7 @@ label{
     }
     
     .access-button {
+        padding: 0 0 0 0;
         margin: 1.5rem 0 0 0;
         height: 3rem;
         width: 7rem;
@@ -1037,13 +1038,11 @@ label{
         font-size: 2.25rem;
     }
     
-    #access-buttons{
-        padding: 1rem 0 1rem 0;
-    }
 
     
     
     .access-button{
+        padding: 0 0 0 0;
         background-color: var(--clr-main);
         color: var(--bg-color);
         min-width: 3rem;
@@ -1052,6 +1051,7 @@ label{
         margin: 1.5rem 0 0 0;
     }
     .access-button {
+        padding: 0 0 0 0;
         margin: 1.5rem 0 0 0;
         height: 3rem;
         width: 7rem;
@@ -1060,6 +1060,7 @@ label{
     
     
     .access-code-buttons{
+        padding: 0 0 0 0;
         background-color: var(--clr-main);
         color: var(--bg-color);
         display: inline;
@@ -1491,11 +1492,6 @@ label{
         font-size: 2.25rem;
     }
     
-    #access-buttons{
-        padding: 1rem 0 1rem 0;
-    }
-
-    
     
     .access-button{
         background-color: var(--clr-main);
@@ -1503,10 +1499,12 @@ label{
         min-width: 3rem;
         height: 1rem;
         font-size: 1.5rem;
+        padding: 0 0 0 0;
         margin: 1.5rem 0 0 0;
     }
     .access-button {
         margin: 1.5rem 0 0 0;
+        padding: 0 0 0 0;
         height: 3rem;
         width: 7rem;
         font: 2rem;
@@ -1514,6 +1512,7 @@ label{
     
     
     .access-code-buttons{
+        padding: 0 0 0 0;
         background-color: var(--clr-main);
         color: var(--bg-color);
         display: inline;
