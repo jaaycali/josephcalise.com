@@ -94,7 +94,6 @@ if (localStorage.getItem("userID") != null) {
 
 
 const correctWordArray = correctWord.toUpperCase().split('')
-console.log(correctWord)
 console.log(allWords.indexOf(correctWord) > -1)
 const correctWordHashTable = {}
 const userGuessArray = []
