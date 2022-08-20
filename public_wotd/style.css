@@ -817,6 +817,7 @@ label{
     }
     
     #keyboard-container {
+        touch-action: manipulation;
         margin: 0 auto;
         padding: 0 0 2rem 0;
         display: grid;
@@ -828,6 +829,7 @@ label{
     }
     
     #keyboard-first-row{
+        touch-action: manipulation;
         margin: 0 auto;
         display: flex;
         justify-content: center;
@@ -839,6 +841,7 @@ label{
     }
     
     #keyboard-second-row{
+        touch-action: manipulation;
         margin: 0 auto;
         display: flex;
         justify-content: center;
@@ -848,6 +851,7 @@ label{
     }
     
     #keyboard-third-row{
+        touch-action: manipulation;
         margin: 0 auto;
         display: flex;
         grid-row: 1fr;
@@ -874,6 +878,7 @@ label{
     }
     
     .special-keys-keyboard{
+        touch-action: manipulation;
         margin: 0 .2rem 0 .2rem;
         min-width: 5.1rem;
         min-height: 5.5rem;
@@ -1261,6 +1266,7 @@ label{
     }
     
     #keyboard-container {
+        touch-action: manipulation;
         margin: 0 auto;
         padding: 0 0 2rem 0;
         display: grid;
@@ -1272,6 +1278,7 @@ label{
     }
     
     #keyboard-first-row{
+        touch-action: manipulation;
         margin: 0 auto;
         display: flex;
         justify-content: center;
@@ -1283,6 +1290,7 @@ label{
     }
     
     #keyboard-second-row{
+        touch-action: manipulation;
         margin: 0 auto;
         display: flex;
         justify-content: center;
@@ -1293,6 +1301,7 @@ label{
     }
     
     #keyboard-third-row{
+        touch-action: manipulation;
         margin: 0 auto;
         display: flex;
         grid-row: 1fr;
@@ -1711,6 +1720,7 @@ label{
     }
     
     #keyboard-container {
+        touch-action: manipulation;
         margin: 0 auto;
         padding: 0 0 0 0;
         display: grid;
@@ -1722,6 +1732,7 @@ label{
     }
     
     #keyboard-first-row{
+        touch-action: manipulation;
         margin: 0 auto;
         display: flex;
         justify-content: center;
@@ -1733,6 +1744,7 @@ label{
     }
     
     #keyboard-second-row{
+        touch-action: manipulation;
         margin: 0 auto;
         display: flex;
         justify-content: center;
@@ -1743,6 +1755,7 @@ label{
     }
     
     #keyboard-third-row{
+        touch-action: manipulation;
         margin: 0 auto;
         display: flex;
         grid-row: 1fr;
@@ -2163,6 +2176,7 @@ label{
     }
     
     #keyboard-container {
+        touch-action: manipulation;
         margin: 0 auto;
         padding: 0 0 0 0;
         display: grid;
@@ -2174,6 +2188,7 @@ label{
     }
     
     #keyboard-first-row{
+        touch-action: manipulation;
         margin: 0 auto;
         display: flex;
         justify-content: center;
@@ -2185,6 +2200,7 @@ label{
     }
     
     #keyboard-second-row{
+        touch-action: manipulation;
         margin: 0 auto;
         display: flex;
         justify-content: center;
@@ -2195,6 +2211,7 @@ label{
     }
     
     #keyboard-third-row{
+        touch-action: manipulation;
         margin: 0 auto;
         display: flex;
         grid-row: 1fr;
@@ -2618,6 +2635,7 @@ label{
     }
     
     #keyboard-container {
+        touch-action: manipulation;
         margin: 0 auto;
         padding: 0 0 0 0;
         display: grid;
@@ -2629,6 +2647,7 @@ label{
     }
     
     #keyboard-first-row{
+        touch-action: manipulation;
         margin: 0 auto;
         display: flex;
         justify-content: center;
@@ -2640,6 +2659,7 @@ label{
     }
     
     #keyboard-second-row{
+        touch-action: manipulation;
         margin: 0 auto;
         display: flex;
         justify-content: center;
@@ -2650,6 +2670,7 @@ label{
     }
     
     #keyboard-third-row{
+        touch-action: manipulation;
         margin: 0 auto;
         display: flex;
         grid-row: 1fr;
@@ -3064,6 +3085,7 @@ label{
     }
     
     #keyboard-container {
+        touch-action: manipulation;
         margin: 0 auto;
         padding: 0 0 2rem 0;
         display: grid;
@@ -3075,6 +3097,7 @@ label{
     }
     
     #keyboard-first-row{
+        touch-action: manipulation;
         margin: 0 auto;
         display: flex;
         justify-content: center;
@@ -3086,6 +3109,7 @@ label{
     }
     
     #keyboard-second-row{
+        touch-action: manipulation;
         margin: 0 auto;
         display: flex;
         justify-content: center;
@@ -3096,6 +3120,7 @@ label{
     }
     
     #keyboard-third-row{
+        touch-action: manipulation;
         margin: 0 auto;
         display: flex;
         grid-row: 1fr;

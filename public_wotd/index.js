@@ -503,12 +503,23 @@ function checkRoundReturnRow() {
                                 Event Listeners
 *************************************************************************************/
 
+
+
+
 for (let key of everyLetterKey) {
     const letterPressed = key.querySelector('p').innerHTML
-    key.addEventListener('click', () => {
-        let currentRowBeingPlayed = checkRoundReturnRow()
-        addLetterToTile(letterPressed, currentRowBeingPlayed)
-    })
+    const events = ['click', 'ontouchstart']
+    events.forEach(evt =>
+        key.addEventListener(evt, () => {
+            let currentRowBeingPlayed = checkRoundReturnRow()
+            addLetterToTile(letterPressed, currentRowBeingPlayed)
+        }), false)
+
+
+    //key.addEventListener('click', () => {
+    //    let currentRowBeingPlayed = checkRoundReturnRow()
+    //    addLetterToTile(letterPressed, currentRowBeingPlayed)
+    //})
 }
 
 
@@ -541,4 +552,13 @@ enterButtonKeyboard.addEventListener('click', async () => {
 deleteButtonKeyboard.addEventListener('click', () => {
     deleteButtonFunctionality()
 })
+
+
+//data persist for logoff 
+//arr of keys with event listeners 
+//each key has an array with key status
+//mongoDB query for last session
+//figure out the guess away and lock it with something in the DB
+
+
 
