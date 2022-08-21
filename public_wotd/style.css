@@ -261,7 +261,7 @@ label{
     min-height: 12rem;
     min-width: 100%;
     grid-template-columns: repeat(4 , 1fr);
-    grid-template-rows: repeat(6, 1fr);
+    grid-template-rows: repeat(7, 1fr);
 }
 
 #average h6 {
@@ -698,7 +698,7 @@ label{
         height: 45%;
         min-width: 100%;
         grid-template-columns: repeat(4 , 1fr);
-        grid-template-rows: repeat(6, 1fr);
+        grid-template-rows: repeat(7, 1fr);
         margin: 0 0 1rem 0;
     }
     
@@ -1151,7 +1151,7 @@ label{
         min-height: 50%;
         min-width: 100%;
         grid-template-columns: repeat(4 , 1fr);
-        grid-template-rows: repeat(6, 1fr);
+        grid-template-rows: repeat(7, 1fr);
     }
     
     #average h5 {
@@ -1605,7 +1605,7 @@ label{
         height: 45%;
         min-width: 100%;
         grid-template-columns: repeat(4 , 1fr);
-        grid-template-rows: repeat(6, 1fr);
+        grid-template-rows: repeat(7, 1fr);
     }
     
     #average h5 {
@@ -2061,7 +2061,7 @@ label{
         height: 45%;
         min-width: 100%;
         grid-template-columns: repeat(4 , 1fr);
-        grid-template-rows: repeat(6, 1fr);
+        grid-template-rows: repeat(7, 1fr);
     }
     
     #average h5 {
@@ -2520,7 +2520,7 @@ label{
         height: 45%;
         min-width: 100%;
         grid-template-columns: repeat(4 , 1fr);
-        grid-template-rows: repeat(6, 1fr);
+        grid-template-rows: repeat(7, 1fr);
     }
     
     #average h5 {
@@ -2970,7 +2970,7 @@ label{
         height: 45%;
         min-width: 100%;
         grid-template-columns: repeat(4 , 1fr);
-        grid-template-rows: repeat(6, 1fr);
+        grid-template-rows: repeat(7, 1fr);
     }
     
     #average h5 {
@@ -3428,7 +3428,7 @@ label{
         min-height: 12rem;
         min-width: 100%;
         grid-template-columns: repeat(4 , 1fr);
-        grid-template-rows: repeat(6, 1fr);
+        grid-template-rows: repeat(7, 1fr);
     }
     
     #average h6 {

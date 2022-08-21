@@ -21,7 +21,7 @@ const maxRounds = 6
  ************************************************************************************/
 
 async function getWord() {
-    const res = await fetch('https://josephcalise.com/wotd/word')
+    const res = await fetch('http://localhost:5000/wotd/word')
     const wordOfTheDay = res.json()
     return wordOfTheDay
 }
@@ -31,7 +31,7 @@ const correctWord = await getWord()
 
 
 async function postUserStats(id) {
-    const res = await fetch(`https://josephcalise.com/wotd/${id}`)
+    const res = await fetch(`http://localhost:5000/wotd/${id}`)
     const userStats = await res.json()
     const userStatsArr = []
     userStatsArr.push(userStats.attempted)
@@ -68,9 +68,15 @@ setInterval(function () {
 
 
 
+async function fillGameBoard() {
+
+}
+
+
+
 if (localStorage.getItem("userID") != null) {
     let leaderboard;
-    const res = await fetch(`https://josephcalise.com/wotd/${localStorage.getItem("userID")}`)
+    const res = await fetch(`http://localhost:5000/wotd/${localStorage.getItem("userID")}`)
     const userStats = await res.json()
     if (userStats.completedToday == true) {
         postUserStats(localStorage.getItem("userID"))
@@ -85,6 +91,10 @@ if (localStorage.getItem("userID") != null) {
             document.getElementById("leader-board-header").classList.remove("hidden")
             document.getElementById("leader-board-grid").classList.remove("hidden")
             document.getElementById("solved-countdown").classList.remove("hidden")
+            //} else if (true) {
+            //This should be started game and fill out the board)
+
+
         } else {
             await getUserName()
         }
@@ -96,7 +106,8 @@ if (localStorage.getItem("userID") != null) {
 const correctWordArray = correctWord.toUpperCase().split('')
 console.log(allWords.indexOf(correctWord) > -1)
 const correctWordHashTable = {}
-const userGuessArray = []
+let userGuessArray = []
+let currentGameBoard = []
 let currentRound = 1;
 let currentPlayer = localStorage.getItem("userID");
 const green = 'rgb(0, 128, 0)'
@@ -109,10 +120,10 @@ var date = new Date().toLocaleDateString("en-US", {
     "day": "numeric"
 });
 
-let data = { userID: currentPlayer, guessesMade: currentRound, currentDate: date };
+let data = { userID: currentPlayer, guessesMade: currentRound, currentDate: date, currentGameBoard: currentGameBoard };
 
 const getInconspicuousVariable = async () => {
-    const res = await fetch('https://josephcalise.com/wotd/groups')
+    const res = await fetch('http://localhost:5000/wotd/groups')
     const validGroups = await res.json()
     return validGroups
 }
@@ -194,13 +205,13 @@ function changeKeyboardColors(tileColorArray) {
 }
 
 const recieveNewId = async () => {
-    const res = await fetch('https://josephcalise.com/wotd/nouser')
+    const res = await fetch('http://localhost:5000/wotd/nouser')
     const madeid = await res.json()
     return madeid
 }
 //This will post request to /success and increments all the positive stuff
 function postRequestSuccess(data) {
-    fetch('https://josephcalise.com/wotd/success', {
+    fetch('http://localhost:5000/wotd/success', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -212,7 +223,7 @@ function postRequestSuccess(data) {
 }
 //This will send a post request to /failed and reset streak and increment other things like failed.
 function postRequestFailed(data) {
-    fetch('https://josephcalise.com/wotd/failed', {
+    fetch('http://localhost:5000/wotd/failed', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -248,7 +259,7 @@ async function getUserName() {
         document.getElementById("solved-countdown").classList.remove("hidden")
 
         //need to add a POST request to update user group and name 
-        fetch('https://josephcalise.com/wotd/group', {
+        fetch('http://localhost:5000/wotd/group', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -321,7 +332,7 @@ async function queryAccessCode() {
 
 
 async function loadUserStatsSuccess(id, data) {
-    const res = await fetch(`https://josephcalise.com/wotd/${id}`)
+    const res = await fetch(`http://localhost:5000/wotd/${id}`)
     const userStats = await res.json()
     const userStatsArr = []
     userStatsArr.push(userStats.attempted)
@@ -337,7 +348,7 @@ async function loadUserStatsSuccess(id, data) {
 }
 
 async function loadUserStatsFailed(id, data) {
-    const res = await fetch(`https://josephcalise.com/wotd/${id}`)
+    const res = await fetch(`http://localhost:5000/wotd/${id}`)
     const userStats = await res.json()
     const userStatsArr = []
     userStatsArr.push(userStats.attempted)
@@ -356,7 +367,7 @@ async function loadUserStatsFailed(id, data) {
 
 
 async function getLeaderboardData(group) {
-    const res = await fetch(`https://josephcalise.com/wotd/leaderboard/${group}`)
+    const res = await fetch(`http://localhost:5000/wotd/leaderboard/${group}`)
     const groupStats = await res.json()
     return groupStats
 }
@@ -402,6 +413,12 @@ function loadLeaderboardData(leaderboard) {
         const fifth = document.querySelectorAll('.fifth-place p');
         for (let i = 0; i < leaderArr[4].length; i++) {
             fifth[i].textContent = leaderArr[4][i]
+        }
+    }
+    if (leaderArr[5] != undefined) {
+        const fifth = document.querySelectorAll('.sixth-place p');
+        for (let i = 0; i < leaderArr[5].length; i++) {
+            fifth[i].textContent = leaderArr[5][i]
         }
     }
 
@@ -521,7 +538,10 @@ for (let key of everyLetterKey) {
     //    addLetterToTile(letterPressed, currentRowBeingPlayed)
     //})
 }
-
+async function pusharr(arr) {
+    await currentGameBoard.push(arr)
+    console.log(currentGameBoard)
+}
 
 //enter is where we check for a returning user or if we need to make a user
 //also checks word length and holds all tile color changes
@@ -545,7 +565,7 @@ enterButtonKeyboard.addEventListener('click', async () => {
         let tileColors = userSubmitsWord()
         changeTileColor(tileColors)
         changeKeyboardColors(tileColors)
-        setTimeout(checkGameEnd, 250)
+        setTimeout(checkGameEnd, 500)
     }
 })
 
