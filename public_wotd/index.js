@@ -21,7 +21,7 @@ const maxRounds = 6
  ************************************************************************************/
 
 async function getWord() {
-    const res = await fetch('http://localhost:5000/wotd/word')
+    const res = await fetch('https://josephcalise.com/wotd/word')
     const wordOfTheDay = res.json()
     return wordOfTheDay
 }
@@ -31,7 +31,7 @@ const correctWord = await getWord()
 
 
 async function postUserStats(id) {
-    const res = await fetch(`http://localhost:5000/wotd/${id}`)
+    const res = await fetch(`https://josephcalise.com/wotd/${id}`)
     const userStats = await res.json()
     const userStatsArr = []
     userStatsArr.push(userStats.attempted)
@@ -76,7 +76,7 @@ async function fillGameBoard() {
 
 if (localStorage.getItem("userID") != null) {
     let leaderboard;
-    const res = await fetch(`http://localhost:5000/wotd/${localStorage.getItem("userID")}`)
+    const res = await fetch(`https://josephcalise.com/wotd/${localStorage.getItem("userID")}`)
     const userStats = await res.json()
     if (userStats.completedToday == true) {
         postUserStats(localStorage.getItem("userID"))
@@ -123,7 +123,7 @@ var date = new Date().toLocaleDateString("en-US", {
 let data = { userID: currentPlayer, guessesMade: currentRound, currentDate: date, currentGameBoard: currentGameBoard };
 
 const getInconspicuousVariable = async () => {
-    const res = await fetch('http://localhost:5000/wotd/groups')
+    const res = await fetch('https://josephcalise.com/wotd/groups')
     const validGroups = await res.json()
     return validGroups
 }
@@ -205,13 +205,13 @@ function changeKeyboardColors(tileColorArray) {
 }
 
 const recieveNewId = async () => {
-    const res = await fetch('http://localhost:5000/wotd/nouser')
+    const res = await fetch('https://josephcalise.com/wotd/nouser')
     const madeid = await res.json()
     return madeid
 }
 //This will post request to /success and increments all the positive stuff
 function postRequestSuccess(data) {
-    fetch('http://localhost:5000/wotd/success', {
+    fetch('https://josephcalise.com/wotd/success', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -223,7 +223,7 @@ function postRequestSuccess(data) {
 }
 //This will send a post request to /failed and reset streak and increment other things like failed.
 function postRequestFailed(data) {
-    fetch('http://localhost:5000/wotd/failed', {
+    fetch('https://josephcalise.com/wotd/failed', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -259,7 +259,7 @@ async function getUserName() {
         document.getElementById("solved-countdown").classList.remove("hidden")
 
         //need to add a POST request to update user group and name 
-        fetch('http://localhost:5000/wotd/group', {
+        fetch('https://josephcalise.com/wotd/group', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -332,7 +332,7 @@ async function queryAccessCode() {
 
 
 async function loadUserStatsSuccess(id, data) {
-    const res = await fetch(`http://localhost:5000/wotd/${id}`)
+    const res = await fetch(`https://josephcalise.com/wotd/${id}`)
     const userStats = await res.json()
     const userStatsArr = []
     userStatsArr.push(userStats.attempted)
@@ -348,7 +348,7 @@ async function loadUserStatsSuccess(id, data) {
 }
 
 async function loadUserStatsFailed(id, data) {
-    const res = await fetch(`http://localhost:5000/wotd/${id}`)
+    const res = await fetch(`https://josephcalise.com/wotd/${id}`)
     const userStats = await res.json()
     const userStatsArr = []
     userStatsArr.push(userStats.attempted)
@@ -367,7 +367,7 @@ async function loadUserStatsFailed(id, data) {
 
 
 async function getLeaderboardData(group) {
-    const res = await fetch(`http://localhost:5000/wotd/leaderboard/${group}`)
+    const res = await fetch(`https://josephcalise.com/wotd/leaderboard/${group}`)
     const groupStats = await res.json()
     return groupStats
 }
